@@ -68,6 +68,8 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
+- ls /usr/local/Cellar/hdf5@1.8/1.8.19
+- ls /usr/local/Cellar/hdf5@1.8/1.8.19/lib
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  pip install -r osx_requirements.pip; fi
 
 
