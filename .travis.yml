@@ -58,9 +58,9 @@ before_install:
 - gcc --version
 - python --version
 - pip --version
+- h5cc --help
 - h5cc -showconfig
 - h5cc --print-file-name
-- h5cc --print-sysroot
 
 #*******************************************************************************
 #Installing SHBAAM
@@ -70,8 +70,7 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
-  #HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  pip install --ignore-installed -r requirements.pip; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HF5F_DIR=-L/usr/local/Cellar/hdf5/1.10.1_2 pip install --ignore-installed -r requirements.pip; fi
 
 
 
