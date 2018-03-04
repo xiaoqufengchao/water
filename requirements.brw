@@ -20,8 +20,7 @@
 python
 pypy
 
-homebrew/science/hdf5
-homebrew/science/netcdf
+homebrew/core/hdf5
 
 gdal
 
