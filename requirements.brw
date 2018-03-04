@@ -24,6 +24,7 @@ pypy
 md5sha1sum
 
 netcdf
+hdf5@1.8
 
 gdal
 
