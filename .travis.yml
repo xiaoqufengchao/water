@@ -48,8 +48,6 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
-  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages; fi
-  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> /Users/travis/Library/Python/2.7/lib/python/site-packages/homebrew.pth; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew reinstall $(grep -v -E '(^#|^$)' requirements.brw) ; fi
 
 #-------------------------------------------------------------------------------
@@ -60,7 +58,6 @@ before_install:
 - gcc --version
 - python --version
 - pip --version
-  #- h5cc -showconfig
 
 #*******************************************************************************
 #Installing SHBAAM
@@ -70,8 +67,7 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19 pip install --ignore-installed -r osx_requirements.pip; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19 pip install --user -r osx_requirements.pip; fi
 
 
 
