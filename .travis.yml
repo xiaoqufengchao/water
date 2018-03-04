@@ -48,8 +48,8 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> /Users/travis/Library/Python/2.7/lib/python/site-packages/homebrew.pth; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then mkdir -p /Users/travis/Library/Python/2.7/lib/python/site-packages; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then echo 'import site; site.addsitedir("/usr/local/lib/python2.7/site-packages")' >> /Users/travis/Library/Python/2.7/lib/python/site-packages/homebrew.pth; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew reinstall $(grep -v -E '(^#|^$)' requirements.brw) ; fi
 
 #-------------------------------------------------------------------------------
