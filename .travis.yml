@@ -70,7 +70,7 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HF5F_DIR=-L/usr/local/Cellar/hdf5/1.10.1_2 pip install --ignore-installed -r requirements.pip; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HD5F_DIR=-L/usr/local/Cellar/hdf5/1.10.1_2 pip install --ignore-installed -r requirements.pip; fi
 
 
 
