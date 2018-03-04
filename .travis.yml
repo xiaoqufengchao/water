@@ -61,8 +61,8 @@ before_install:
 - python --version
 - pip --version
 - h5cc -showconfig
-- h5cc -print-file-name
-- h5cc -print-sysroot
+- h5cc --print-file-name
+- h5cc --print-sysroot
 
 #*******************************************************************************
 #Installing SHBAAM
