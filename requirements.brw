@@ -22,6 +22,8 @@ pypy
 
 md5sha1sum
 
+hdf5@1.8
+
 gdal
 
 spatialindex
