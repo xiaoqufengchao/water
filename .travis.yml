@@ -35,6 +35,8 @@ env:
 #*******************************************************************************
 before_install:
 
+- rvm get stable
+
 #-------------------------------------------------------------------------------
 #Specific to Linux
 #-------------------------------------------------------------------------------
@@ -67,7 +69,6 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H pip install $(grep shapely osx_requirements.pip); fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19 pip install -r osx_requirements.pip; fi
 
 
