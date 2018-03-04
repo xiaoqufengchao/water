@@ -20,6 +20,8 @@
 python
 pypy
 
+md5sha1sum
+
 homebrew/core/hdf5
 
 gdal
