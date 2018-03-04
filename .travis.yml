@@ -77,8 +77,8 @@ install:
 #*******************************************************************************
 script:
 - cd $TRAVIS_BUILD_DIR
-- cd ./tst/
 - python test.py
+- cd ./tst/
 - echo $TST_PUB_DWNL && $TST_PUB_DWNL
 - echo $TST_PUB_REPR && $TST_PUB_REPR
 - echo "The build is now completed"
