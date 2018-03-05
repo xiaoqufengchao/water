@@ -22,6 +22,8 @@ matrix:
       sudo: required
     - os: osx
 
+git:
+  depth: false
 
 #*******************************************************************************
 #Environment variables for different tests on multiple Travis CI workers
