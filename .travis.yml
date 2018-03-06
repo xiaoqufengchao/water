@@ -43,6 +43,8 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get --version             ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y $(grep -v -E '(^#|^$)' requirements.apt) ; fi
 
+- which wget
+- whereis wget
 
 #-------------------------------------------------------------------------------
 #Specific to OSX
@@ -60,6 +62,9 @@ before_install:
 - gcc --version
 - python --version
 - pip --version
+- which wget
+- whereis wget
+- wget --version
 
 #*******************************************************************************
 #Installing SHBAAM
@@ -78,8 +83,8 @@ install:
 script:
 - cd $TRAVIS_BUILD_DIR
 - cd ./tst/
-- travis_wait 30 echo $TST_PUB_DWNL && $TST_PUB_DWNL
-- travis_wait 30 $TST_PUB_REPR && $TST_PUB_REPR
+- echo $TST_PUB_DWNL && $TST_PUB_DWNL
+- echo $TST_PUB_REPR && $TST_PUB_REPR
 - echo "The build is now completed"
 
 #*******************************************************************************
