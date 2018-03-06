@@ -14,3 +14,5 @@ environment:
 install:
   
 test_script:
+  - ps: cd ./tst
+  - ps: sh TST_PUB_DWNL && sh TST_PUB_DWNL
