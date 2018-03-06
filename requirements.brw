@@ -26,6 +26,8 @@ md5sha1sum
 hdf5@1.8
 netcdf
 
+wget
+
 gdal
 
 spatialindex
