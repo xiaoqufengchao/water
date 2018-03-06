@@ -8,6 +8,9 @@ environment:
       PYTHON_VERSION: "2.7.8"
       PYTHON_ARCH: "32"
 
-install:
+  TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
+  TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
+install:
+  
 test_script:
