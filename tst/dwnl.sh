@@ -49,6 +49,31 @@ echo "These files are under a Creative Commons Attribution (CC BY) license."
 echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
 
+
+
+#*******************************************************************************
+#Download current GRACE files
+#*******************************************************************************
+
+#-------------------------------------------------------------------------------
+#Download parameters
+#-------------------------------------------------------------------------------
+URL="ftp://podaac.jpl.nasa.gov/allData/tellus/L3/mascon/RL05/JPL/CRI/netcdf/"
+
+folder="../input/GRACE"
+
+list="                                                                         \
+      CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc                                   \
+      CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                               \
+      JPL_MSCNv01_PLACEMENT.nc                                                 \
+      LAND_MASK.CRIv01.nc                                                      \
+      LAND_MASK.CRIv01.nc.md5                                                  \
+    "
+
+#-------------------------------------------------------------------------------
+#Download process
+#-------------------------------------------------------------------------------
+
 mkdir -p $folder
 for file in $list
 do
