@@ -15,8 +15,11 @@ do
   if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
-cd $folder
-#fsum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
-md5sums CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
+#cd $folder
+str1=$(md5 $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc)
+str2=$(cat $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5)
+python compare.py $str1 $str2
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-cd $initial_directory
+
+
+$SHELL
