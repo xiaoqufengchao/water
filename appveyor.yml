@@ -12,8 +12,8 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 install:
+  - ps: choco install (get-content requirements.win)
   
 test_script:
   - ps: cd ./tst
-  - ps: sh $TST_PUB_DWNL
-  - ps: sh $TST_PUB_PEPR
+  - ps: sh test.sh
