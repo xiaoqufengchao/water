@@ -18,7 +18,5 @@ done
 #cd $folder
 str1=$(md5sum $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc)
 str2=$(cat $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5)
-echo $str1
-echo $str2
 python compare.py $str1 $str2
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi

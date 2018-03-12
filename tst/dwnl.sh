@@ -83,8 +83,11 @@ do
 done
 
 cd $folder
-md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                          
+str1=$(md5sum $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc)
+str2=$(cat $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5)
+python compare.py $str1 $str2
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-md5sum -c LAND_MASK.CRIv01.nc.md5
+str1=$(md5sum $folder/LAND_MASK.CRIv01.nc)
+str2=$(cat $folder/LAND_MASK.CRIv01.nc.md5 )
+python compare.py $str1 $str2
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-cd -
