@@ -48,3 +48,11 @@ echo "                          http://dx.doi.org/10.1002/2016WR019344"
 echo "These files are under a Creative Commons Attribution (CC BY) license."
 echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
+
+mkdir -p $folder
+for file in $list
+do
+     wget -nv -nc $URL/$file -P $folder
+     #curl -fsS -o $folder/$file $URL/$file
+     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
+done
