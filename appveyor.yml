@@ -17,3 +17,4 @@ install:
 test_script:
   - ps: cd ./tst
   - ps: $TST_PUB_DWNL
+  - ps: $TST_PUB_REPR
