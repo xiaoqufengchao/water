@@ -16,5 +16,4 @@ install:
   
 test_script:
   - ps: cd ./tst
-  - ps: sh $TST_PUB_DWNL
-  - ps: sh $TST_PUB_REPR
+  - ps: sh dwnl.sh
