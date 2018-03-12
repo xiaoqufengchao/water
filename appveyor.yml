@@ -15,5 +15,7 @@ install:
   - ps: choco install (get-content requirements.win)
   
 test_script:
+  - ps: diff requirements.brw requirements.pip
+  - ps: echo $?
   - ps: cd ./tst
   - ps: sh test.sh
