@@ -81,3 +81,10 @@ do
      curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
+
+cd $folder
+md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                          
+if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
+md5sum -c LAND_MASK.CRIv01.nc.md5
+if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
+cd -
