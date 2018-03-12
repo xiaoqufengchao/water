@@ -19,5 +19,3 @@ cd $folder
 fsum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
 cd $initial_directory
-
-$SHELL
