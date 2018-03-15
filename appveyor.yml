@@ -17,7 +17,7 @@ install:
 
 test_script:
   - ps: mkdir input
-  - ps: wget www.goole.com -P input #-o out
+  - ps: wget www.goole.com -P input
   - ps: cat index.html
     #- ps: cat out
   - ps: cd ./tst
