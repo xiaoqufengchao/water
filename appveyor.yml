@@ -13,7 +13,7 @@ environment:
 
 install:
   - ps: Remove-Item Alias:wget
-  - ps: choco -y -r install (get-content requirements.win)
+  - ps: choco -y install (get-content requirements.win)
 
 test_script:
   - ps: wget www.goole.com
