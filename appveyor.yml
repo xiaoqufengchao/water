@@ -16,7 +16,8 @@ install:
   - ps: choco install -y (get-content requirements.win)
 
 test_script:
-  - ps: wget www.goole.com -o out
+  - ps: mkdir input
+  - ps: wget www.goole.com -P input #-o out
   - ps: cat index.html
     #- ps: cat out
   - ps: cd ./tst
