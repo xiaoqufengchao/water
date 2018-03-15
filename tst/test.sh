@@ -49,7 +49,6 @@ echo "These files are under a Creative Commons Attribution (CC BY) license."
 echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
 
-main_directory=$(pwd)
 
 #*******************************************************************************
 #Download current GRACE files
@@ -85,9 +84,7 @@ done
 #-------------------------------------------------------------------------------
 #Check downloads
 #-------------------------------------------------------------------------------
-cd $folder
-md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                           \
-          LAND_MASK.CRIv01.nc.md5
+md5sum -c $folder/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                           \
+          $folder/LAND_MASK.CRIv01.nc.md5
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-cd $main_directory
 
