@@ -85,9 +85,8 @@ done
 #Check downloads
 #-------------------------------------------------------------------------------
 cd $folder
-md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                          
-if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-md5sum -c LAND_MASK.CRIv01.nc.md5
+md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                           \
+          LAND_MASK.CRIv01.nc.md5
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
 cd -
 
@@ -123,10 +122,7 @@ done
 #Check downloads
 #-------------------------------------------------------------------------------
 cd $folder
-diff -w <(md5sum GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc) \
-                GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
-if [ $? -gt 0 ] ; then echo "Problem checking retired GRACE" >&2 ; exit 44 ; fi
-echo "GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc: OK"
+md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
 cd -
 
 
