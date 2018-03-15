@@ -16,6 +16,7 @@ install:
   - ps: choco install -y (get-content requirements.win)
 
 test_script:
-  - ps: wget -nv -nc www.goole.com
+  - ps: wget -nv -nc www.goole.com -o out
+  - ps: cat out
   - ps: cd ./tst
   - ps: sh $TST_PUB_DWNL
