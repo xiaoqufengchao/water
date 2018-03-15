@@ -12,12 +12,8 @@ environment:
   TST_PUB_REPR: 'tst_pub_repr_David_etal_201x_SER.sh'
 
 install:
-  - ps: get-command wget
-  - ps: Remove-Item Alias:wget
   - ps: choco install (get-content requirements.win)
-  - ps: get-command wget
-
+  
 test_script:
-  - ps: wget www.goole.com
   - ps: cd ./tst
   - ps: sh $TST_PUB_DWNL
