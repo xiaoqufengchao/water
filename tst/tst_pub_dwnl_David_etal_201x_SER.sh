@@ -49,6 +49,7 @@ echo "These files are under a Creative Commons Attribution (CC BY) license."
 echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
 
+main_directory=$(pwd)
 
 #*******************************************************************************
 #Download current GRACE files
@@ -76,8 +77,7 @@ list="                                                                         \
 mkdir -p $folder
 for file in $list
 do
-     wget -nv -nc $URL/$file -P $folder
-     #curl -fsS -o $folder/$file $URL/$file
+     curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
@@ -88,7 +88,7 @@ cd $folder
 md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                           \
           LAND_MASK.CRIv01.nc.md5
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-cd -
+cd $main_directory
 
 
 #*******************************************************************************
@@ -114,7 +114,7 @@ list="                                                                         \
 mkdir -p $folder
 for file in $list
 do
-     wget -nv -nc $URL/$file -P $folder
+     curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
@@ -123,7 +123,7 @@ done
 #-------------------------------------------------------------------------------
 cd $folder
 md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
-cd -
+cd $main_directory
 
 
 #*******************************************************************************
@@ -145,7 +145,7 @@ list="                                                                         \
 mkdir -p $folder
 for file in $list
 do
-     wget -nv -nc $URL/$file -P $folder
+     curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
@@ -170,7 +170,7 @@ list="                                                                         \
 mkdir -p $folder
 for file in $list
 do
-     wget -nv -nc $URL/$file -P $folder
+     curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
