@@ -17,4 +17,4 @@ install:
   
 test_script:
   - ps: cd ./tst
-  - ps: sh dwnl.sh
+  - ps: sh test.sh
