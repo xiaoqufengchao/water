@@ -16,6 +16,5 @@ install:
   - ps: choco install (get-content requirements.win)
   
 test_script:
-  - ps: get-command wget
   - ps: cd ./tst
   - ps: sh dwnl.sh
