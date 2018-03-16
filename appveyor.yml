@@ -14,7 +14,7 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-
+  - ps: Get-ChildItem Env:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
