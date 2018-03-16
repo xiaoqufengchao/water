@@ -20,7 +20,7 @@ install:
   - ps: Remove-Item Alias:wget
   - ps: choco install --help
   - ps: choco install miniconda
-  - ps: ls C:\Program Files
+  - ps: ls C:\ProgramData
   - ps: ls C:\
   - ps: ls C:\tools
     #- ps: choco install (get-content requirements.win)
