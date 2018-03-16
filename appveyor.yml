@@ -18,8 +18,9 @@ init:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
+  - ps: choco --help
   - ps: choco install miniconda
-  - ps: ls C:\tools
+  - ps: ls C:\
     #- ps: choco install (get-content requirements.win)
   - ps: conda update --help
   - ps: conda update -v -y -n base conda
