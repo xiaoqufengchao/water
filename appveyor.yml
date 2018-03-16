@@ -18,7 +18,7 @@ init:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
-  - ps: choco --help
+  - ps: choco install --help
   - ps: choco install miniconda
   - ps: ls C:\
     #- ps: choco install (get-content requirements.win)
