@@ -65,10 +65,11 @@ folder="../input/GRACE"
 list="                                                                         \
       CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc                                   \
       CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                               \
-      JPL_MSCNv01_PLACEMENT.nc                                                 \
-      LAND_MASK.CRIv01.nc                                                      \
-      LAND_MASK.CRIv01.nc.md5                                                  \
+      
     "
+#JPL_MSCNv01_PLACEMENT.nc                                                 \
+#      LAND_MASK.CRIv01.nc                                                      \
+#      LAND_MASK.CRIv01.nc.md5                                                  \
 
 #-------------------------------------------------------------------------------
 #Download process
@@ -84,9 +85,9 @@ done
 #-------------------------------------------------------------------------------
 #Check downloads
 #-------------------------------------------------------------------------------
-cd $folder
-md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
-if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-md5sum -c LAND_MASK.CRIv01.nc.md5
-if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
-cd $main_directory
+#cd $folder
+#md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
+#if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
+#md5sum -c LAND_MASK.CRIv01.nc.md5
+#if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
+#cd $main_directory
