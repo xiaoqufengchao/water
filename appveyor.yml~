@@ -18,8 +18,9 @@ environment:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
-  - ps: choco install (get-content requirements.win)
-  - ps: C:\Miniconda-x64.exe install hdf5==1.8.18
+    #- ps: choco install (get-content requirements.win)
+  - ps: set "Miniconda=C:\Miniconda-x64"
+  - ps: C:\Miniconda-x64 install hdf5==1.8.18
   - ps: pip install numpy==1.7.0
   - ps: pip install -r requirements.pip
 
