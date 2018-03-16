@@ -18,6 +18,8 @@ install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
 
+  - ps: choco install wget
+
   - ps: mkdir downloads
   - ps: cd downloads
   - ps: wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip
