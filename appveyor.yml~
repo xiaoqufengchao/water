@@ -16,6 +16,7 @@ environment:
   DING: './test.sh'
 
 install:
+  - ps: get-command python
   - ps: Remove-Item Alias:wget
   - ps: choco install (get-content requirements.win)
   - ps: C:\Miniconda-x64.exe install hdf5==1.8.18
