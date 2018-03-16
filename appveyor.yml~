@@ -23,10 +23,8 @@ install:
   - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
    
   - ps: conda install --help
-  - ps: conda install -y (get-content requirements.win)
-    #- ps: conda install -y hdf5
-    # - ps: conda install numpy==1.7.0
-  - ps: conda install -y -file requirements.pip
+    #- ps: conda install -y (get-content requirements.win)
+  - ps: conda install -y --file requirements.pip
 
 test_script:
   - ps: cd ./tst
