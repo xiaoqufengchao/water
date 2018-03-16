@@ -14,7 +14,7 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: ENV:$PYTHON_ARCH
+  - ps: $ENV:PYTHON_ARCH
   - ps: echo $PYTHON_ARCH
 
 install:
