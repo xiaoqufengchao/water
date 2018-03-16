@@ -7,18 +7,19 @@ environment:
     - PYTHON: "C:\\Python27_64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
-      MINICONDA: "C:\\Miniconda-x64"
+      #MINICONDA: "C:\\Miniconda-x64"
       
 
   TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+        #- ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
+  - ps: choco install miniconda
+  - ps: ls C:\tools
     #- ps: choco install (get-content requirements.win)
   - ps: conda update --help
   - ps: conda update -v -y -n base conda
