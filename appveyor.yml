@@ -15,12 +15,11 @@ environment:
 
 init:
   - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
-
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
     #- ps: choco install (get-content requirements.win)
-  - ps: conda config --set always_yes yes --set changeps1 no 
   - ps: conda update --help
   - ps: conda update -v -y -n base conda
   - ps: conda install -y hdf5==1.8.18
