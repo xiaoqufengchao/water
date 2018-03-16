@@ -27,7 +27,7 @@ install:
     #- ps: choco install (get-content requirements.win)
     #- ps: conda update --help
     # - ps: conda update -v -y -n base conda
-  - ps: conda install -y hdf5==1.8.18
+  - ps: conda install -y hdf5
   - ps: pip install numpy==1.7.0
   - ps: pip install -r requirements.pip
 
