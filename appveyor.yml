@@ -22,4 +22,4 @@ test_script:
     #- ps: cat input/index.html
     #- ps: cat out
   - ps: cd ./tst
-  - ps: sh $test.sh
+  - ps: sh test.sh
