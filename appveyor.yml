@@ -14,7 +14,8 @@ environment:
 
 install:
   - ps: Remove-Item Alias:wget
-  - ps: choco install -y (get-content requirements.win)
+  - ps: choco install (get-content requirements.win)
+  - ps: pip install (get-content requirements.pip)
 
 test_script:
     #- ps: mkdir input
