@@ -15,6 +15,7 @@ environment:
 install:
   - ps: Remove-Item Alias:wget
   - ps: choco install (get-content requirements.win)
+  - ps: pip install numpy==1.7.0
   - ps: pip install -r requirements.pip
 
 test_script:
