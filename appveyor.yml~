@@ -23,4 +23,4 @@ test_script:
     #- ps: cat input/index.html
     #- ps: cat out
   - ps: cd ./tst
-  - ps: sh $DING
+  - ps: sh DING

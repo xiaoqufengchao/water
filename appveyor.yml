@@ -10,7 +10,7 @@ environment:
 
   TST_PUB_DWNL: 'tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: 'tst_pub_repr_David_etal_201x_SER.sh'
-  DING: "test.sh"
+  DING: './test.sh'
 
 install:
   - ps: Remove-Item Alias:wget
@@ -23,4 +23,4 @@ test_script:
     #- ps: cat input/index.html
     #- ps: cat out
   - ps: cd ./tst
-  - ps: sh DING
+  - ps: $DING
