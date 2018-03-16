@@ -14,6 +14,7 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
+  - ps: get-command miniconda
 
 install:
   - ps: get-command python
