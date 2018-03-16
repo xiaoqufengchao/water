@@ -124,6 +124,7 @@ done
 #Check downloads
 #-------------------------------------------------------------------------------
 cd $folder
+echo $TRAVIS_OS_NAME
 md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
 cd $main_directory
 
