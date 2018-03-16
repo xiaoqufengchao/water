@@ -75,12 +75,12 @@ list="                                                                         \
 #Download process
 #-------------------------------------------------------------------------------
 
-mkdir -p $folder
-for file in $list
-do
-     wget -nv -nc $URL/$file -P $folder -o out
-     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
-done
+#mkdir -p $folder
+#for file in $list
+#do
+#     wget -nv -nc $URL/$file -P $folder -o out
+#     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
+#done
 
 #-------------------------------------------------------------------------------
 #Check downloads
