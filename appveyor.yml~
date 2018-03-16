@@ -17,15 +17,14 @@ init:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
-
+  - ps: Remove-Item Alias:curl
   - ps: choco install wget
 
   - ps: mkdir downloads
   - ps: cd downloads
   - ps: curl -fsS -o hdf5.zip https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip
-    #- ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip
-    #- ps: 7z x *.zip -o*
-    #- ps: cd CCMake-hdf5-1.10.1\CMake-hdf5-1.10.1
+  - ps: 7z x *.zip -o*
+  - ps: cd CCMake-hdf5-1.10.1\CMake-hdf5-1.10.1\
   - ps: .\build-VS2013-64.bat
 
   - ps: pip install -y --file requirements.pip
