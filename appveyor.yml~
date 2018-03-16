@@ -23,7 +23,8 @@ install:
   - ps: mkdir downloads
   - ps: cd downloads
   - ps: wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip
-  - ps: ls
+  - ps: 7z x *.zip -o*
+  - ps: cd CCMake-hdf5-1.10.1\CMake-hdf5-1.10.1
 
   - ps: pip install -y --file requirements.pip
 
