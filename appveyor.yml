@@ -7,24 +7,23 @@ environment:
     - PYTHON: "C:\\Python27_64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
-      MINICONDA: "C:\\ProgramData\\Miniconda2"
       
 
   TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-        # - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
+
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
-    #- ps: choco install --help
-  - ps: choco install miniconda
-  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
-   
-  - ps: conda install --help
-    #- ps: conda install -y (get-content requirements.win)
-  - ps: conda install -y --file requirements.pip
+
+  - ps: mkdir downloads
+  - ps: cd downloads
+  - ps: wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip
+  - ps: ls
+
+  - ps: pip install -y --file requirements.pip
 
 test_script:
   - ps: cd ./tst
