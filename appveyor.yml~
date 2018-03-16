@@ -7,20 +7,20 @@ environment:
     - PYTHON: "C:\\Python27_64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
-      CONDA_PY: "27"
-      CONDA_NPY: "18"
+      MINICONDA: C:\Miniconda-x64
       
 
   TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
-  DING: './test.sh'
+
+init:
+  - ps: "
 
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
     #- ps: choco install (get-content requirements.win)
-  - ps: set "Miniconda=C:\Miniconda-x64"
-  - ps: C:\Miniconda-x64 install hdf5==1.8.18
+  - ps: Miniconda install hdf5==1.8.18
   - ps: pip install numpy==1.7.0
   - ps: pip install -r requirements.pip
 
