@@ -15,6 +15,7 @@ environment:
 
 init:
   - ps: echo $ENV:MINICONDA
+  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
   - ps: echo $ENV:PATH
 
 install:
