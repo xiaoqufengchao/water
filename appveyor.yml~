@@ -24,3 +24,4 @@ test_script:
     #- ps: cat out
   - ps: cd ./tst
   - ps: $TST_PUB_DWNL
+  - ps: $TST_PUB_REPR
