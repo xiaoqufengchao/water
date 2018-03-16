@@ -4,9 +4,12 @@ build: false
 
 environment:
   matrix:
-    - PYTHON: "C:\\Python27"
-      PYTHON_VERSION: "2.7.8"
-      PYTHON_ARCH: "32"
+    - PYTHON: "C:\\Python27_64"
+      PYTHON_VERSION: "2.7"
+      PYTHON_ARCH: "64"
+      CONDA_PY: "27"
+      CONDA_NPY: "18"
+      
 
   TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
