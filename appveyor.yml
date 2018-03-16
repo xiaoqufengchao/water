@@ -17,7 +17,7 @@ init:
 install:
   - ps: get-command python
   - ps: Remove-Item Alias:wget
-
+  - ps: Remove-Item Alias:curl
   - ps: choco install wget
 
   - ps: mkdir downloads
