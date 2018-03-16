@@ -77,7 +77,7 @@ list="                                                                         \
 mkdir -p $folder
 for file in $list
 do
-     curl -fsS -o $folder/$file $URL/$file
+     wget -nv -nc $URL/$file -P $folder -o out
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
@@ -85,104 +85,8 @@ done
 #Check downloads
 #-------------------------------------------------------------------------------
 cd $folder
-md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5                           \
-          LAND_MASK.CRIv01.nc.md5
+md5sum -c CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc.md5
+if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
+md5sum -c LAND_MASK.CRIv01.nc.md5
 if [ $? -gt 0 ] ; then echo "Problem Checking file" >&2 ; exit 44 ; fi
 cd $main_directory
-
-
-#*******************************************************************************
-#Download retired GRACE files
-#*******************************************************************************
-
-#-------------------------------------------------------------------------------
-#Download parameters
-#-------------------------------------------------------------------------------
-URL="ftp://podaac.jpl.nasa.gov/allData/tellus/retired/L3/mascon/RL05/JPL/CRI/netcdf/"
-
-
-folder="../input/GRACE"
-
-list="                                                                         \
-      GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc                 \
-      GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5             \
-    "
-
-#-------------------------------------------------------------------------------
-#Download process
-#-------------------------------------------------------------------------------
-mkdir -p $folder
-for file in $list
-do
-     curl -fsS -o $folder/$file $URL/$file
-     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
-done
-
-#-------------------------------------------------------------------------------
-#Check downloads
-#-------------------------------------------------------------------------------
-cd $folder
-md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
-cd $main_directory
-
-
-#*******************************************************************************
-#Download SHBAAM input files
-#*******************************************************************************
-
-#-------------------------------------------------------------------------------
-#Download parameters
-#-------------------------------------------------------------------------------
-URL="http://rapid-hub.org/data/CI/SERVIR_STK"
-folder="../input/SERVIR_STK"
-list="                                                                         \
-      Nepal.zip                                                                \
-     "
-
-#-------------------------------------------------------------------------------
-#Download process
-#-------------------------------------------------------------------------------
-mkdir -p $folder
-for file in $list
-do
-     curl -fsS -o $folder/$file $URL/$file
-     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
-done
-
-
-#*******************************************************************************
-#Download SHBAAM output files
-#*******************************************************************************
-
-#-------------------------------------------------------------------------------
-#Download parameters
-#-------------------------------------------------------------------------------
-URL="http://rapid-hub.org/data/CI/SERVIR_STK"
-folder="../output/SERVIR_STK"
-list="                                                                         \
-      map_Nepal.nc                                                             \
-      timeseries_Nepal.csv                                                     \
-     "
-
-#-------------------------------------------------------------------------------
-#Download process
-#-------------------------------------------------------------------------------
-mkdir -p $folder
-for file in $list
-do
-     curl -fsS -o $folder/$file $URL/$file
-     if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
-done
-
-
-#*******************************************************************************
-#Convert legacy files
-#*******************************************************************************
-unzip -nq ../input/SERVIR_STK/Nepal.zip -d ../input/SERVIR_STK/
-if [ $? -gt 0 ] ; then echo "Problem converting" >&2 ; exit 22 ; fi
-
-
-#*******************************************************************************
-#Done
-#*******************************************************************************
-
