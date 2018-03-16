@@ -15,14 +15,10 @@ environment:
 install:
   - ps: Remove-Item Alias:wget
   - ps: choco install (get-content requirements.win)
+  - ps: pip install numpy==1.7.0
   - ps: pip install -r requirements.pip
 
 test_script:
-    #- ps: mkdir input
-    #- ps: wget -nv -nc www.goole.com -P input -o out
-    #- ps: wget -nv -nc www.google.com -P input -o out
-    #- ps: cat input/index.html
-    #- ps: cat out
   - ps: cd ./tst
   - ps: python test.py
   - ps: sh tst_pub_dwnl_David_etal_201x_SER.sh
