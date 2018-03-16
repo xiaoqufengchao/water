@@ -23,4 +23,5 @@ test_script:
     #- ps: cat input/index.html
     #- ps: cat out
   - ps: cd ./tst
+  - ps: sh cat.sh
   - ps: sh tst_pub_dwnl_David_etal_201x_SER.sh
