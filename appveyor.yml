@@ -14,7 +14,6 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: conda --help
 
 install:
   - ps: get-command python
