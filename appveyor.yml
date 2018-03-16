@@ -14,7 +14,8 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: ls C:\Miniconda-x64\
+  - ps: $PYTHON_ARCH
+  - ps: echo $PYTHON_ARCH
 
 install:
   - ps: get-command python
