@@ -22,7 +22,7 @@ install:
   - ps: Remove-Item Alias:wget
     #- ps: choco install (get-content requirements.win)
   - ps: conda update --help
-  - ps: conda clean -all
+  - ps: conda clean -y -all
   - ps: conda update -v -y -n base conda
   - ps: conda install -y hdf5==1.8.18
   - ps: pip install numpy==1.7.0
