@@ -14,12 +14,13 @@ environment:
 
 init:
   - ps: choco install miniconda
-  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:PATH"
+  - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
 install:
     #- ps: Remove-Item Alias:wget
     #- ps: choco install wget
-  - ps: conda install -y -c ioos netcdf4
-
+    #- ps: conda install -y -c ioos netcdf4
+    - ps: wget https://download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl -o out
+    - ps: pip install Rtree-0.8.3-cp27-cp27m-win_amd64.whl
     # - ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip -o out
     #  - ps: 7z x *.zip -o*
     #  - ps: ls
