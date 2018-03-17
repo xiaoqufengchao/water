@@ -14,7 +14,6 @@ environment:
 
 init:
   - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
-  - ps: python addpath.py
 
 install:
   - ps: choco install miniconda
