@@ -18,9 +18,9 @@ init:
 install:
   - ps: choco install miniconda
 
-  - ps: conda install -y -c ioos netcdf4
-  - ps: conda install -y -c cjrh numpy
-  - ps: conda install -y -c erdc fiona
+  - ps: conda install -y -debug -c ioos netcdf4
+  - ps: conda install -y -debug -vv -c cjrh numpy
+  - ps: conda install -y -debug -c erdc fiona
   - ps: pip install -y -i https://pypi.anaconda.org/joschka_zj/simple shapely
 
   - ps: Remove-Item Alias:curl
