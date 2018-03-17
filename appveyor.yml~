@@ -17,8 +17,9 @@ init:
 
 install:
   - ps: choco install miniconda
+  - ps:  conda config --set report_errors false
   - ps: conda install -y -c krisvanneste gdal 
-  - ps: condan install 
+  - ps: conda install -y -c krisvanneste fiona 
   - ps: conda install -y -c cjrh numpy
   - ps: conda install -y -c ioos netcdf4
   - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
