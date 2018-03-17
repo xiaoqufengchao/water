@@ -25,10 +25,10 @@ install:
   - ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip -o out
   - ps: 7z x *.zip -o*
   - ps: ls
-  - ps: cd CCMake-hdf5-1.10.1\CMake-hdf5-1.10.1
+  - ps: cd CMake-hdf5-1.10.1\CMake-hdf5-1.10.1
   - ps: .\build-VS2013-64.bat
 
-  - ps: pip install -y --file requirements.pip
+  - ps: pip install -r requirements.pip
 
 test_script:
   - ps: cd ./tst
