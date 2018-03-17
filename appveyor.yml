@@ -18,7 +18,7 @@ init:
 install:
   - ps: choco install miniconda
   - ps: ls C:\\ProgramData\\Miniconda2\Lib\site-packages
-  - ps: conda install -y --no-update-deps --debug --force --clobber -c erdc fiona
+  - ps: conda install -y --no-update-deps --force --clobber -c erdc fiona
 
   - ps: conda install -y -q -c ioos netcdf4
   - ps: conda install -y -q -c cjrh numpy
