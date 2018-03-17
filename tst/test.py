@@ -1,4 +1,5 @@
 import sys
+sys.path.append(r'C:\ProgramData\Miniconda2\Lib\site-packages')
 import os.path
 import subprocess
 import netCDF4
@@ -11,5 +12,4 @@ import math
 import csv
 
 
-sys.path.append(r'C:\ProgramData\Miniconda2\Lib\site-packages')
 print "nice!"
