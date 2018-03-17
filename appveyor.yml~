@@ -28,7 +28,9 @@ install:
   - ps: cd CMake-hdf5-1.10.1\CMake-hdf5-1.10.1
   - ps: .\build-VS2013-64.bat
   - ps: cd C:\projects\wat
-  - ps: pip install -r requirements.pip
+  - ps: ls C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1
+  - ps: pip install numpy==1.7.0
+  - ps: pip install HDF5_DIR=C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1  -r requirements.pip
 
 test_script:
   - ps: cd ./tst
