@@ -23,8 +23,8 @@ install:
 
   - ps: conda install -y -c ioos netcdf4
   - ps: conda install -y -c cjrh numpy
-  - ps: conda install -c erdc fiona
-  - ps: pip install -i https://pypi.anaconda.org/joschka_zj/simple shapely
+  - ps: conda install -y -c erdc fiona
+  - ps: pip install -y -i https://pypi.anaconda.org/joschka_zj/simple shapely
     #- ps: Remove-Item Alias:wget
     #- ps: choco install wget
 
