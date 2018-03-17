@@ -14,7 +14,7 @@ environment:
 
 init:
   - ps: choco install miniconda
-  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:PATH"
+  - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
 install:
     #- ps: Remove-Item Alias:wget
     #- ps: choco install wget
