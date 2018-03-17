@@ -13,29 +13,16 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: Remove-Item Alias:curl
-  - ps: curl -fsS -o Rtree-0.8.3-py2-none-any.whl https://pypi.python.org/packages/c9/d6/0d019787b724b15532be415e0c9782f7a869ebd5586f09535a67b2f12b9b/Rtree-0.8.3-py2-none-any.whl#md5=c990384aeeff68b3a599d78ac5207041
-    #- ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl :d//download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
-  - ps: get-command pip
-  - ps: pip install Rtree-0.8.3-py2-none-any.whl
-  - ps: get-command pip
-  - ps: python -m pip install --upgrade pip
-  - ps: choco install miniconda
   - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
 
 install:
+  - ps: Remove-Item Alias:curl
+  - ps: curl -fsS -o Rtree-0.8.3-py2-none-any.whl https://pypi.python.org/packages/c9/d6/0d019787b724b15532be415e0c9782f7a869ebd5586f09535a67b2f12b9b/Rtree-0.8.3-py2-none-any.whl#md5=c990384aeeff68b3a599d78ac5207041
+  - ps: pip --disable-pip-version-check install Rtree-0.8.3-py2-none-any.whl
+  - ps: choco install miniconda
     #- ps: Remove-Item Alias:wget
     #- ps: choco install wget
-    #- ps: choco install curl
     #- ps: conda install -y -c ioos netcdf4
-    - ps: pip install Rtree-0.8.3-cp27-cp27m-win_amd64.whl
-    # - ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip -o out
-    #  - ps: 7z x *.zip -o*
-    #  - ps: ls
-    #  - ps: cd CMake-hdf5-1.10.1\CMake-hdf5-1.10.1
-    #  - ps: .\build-VS2013-64.bat
-    #  - ps: cd C:\projects\wat
-    #  - ps: ls C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1
     #- ps: pip install numpy==1.7.0
     #- ps: pip install HDF5_DIR=C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1 -r requirements.pip
 
