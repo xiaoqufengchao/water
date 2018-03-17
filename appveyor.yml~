@@ -17,10 +17,10 @@ init:
 
 install:
   - ps: choco install miniconda
-  - ps: conda install --help
 
   - ps: conda install -y -q -c ioos netcdf4
   - ps: conda install -y -q -c cjrh numpy
+  - ps: pip uninstall six
   - ps: conda install -y --debug --force --clobber -c erdc fiona
 
   - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
