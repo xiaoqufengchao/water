@@ -13,6 +13,7 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
+  - ps: Remove-Item Alias:curl
   - ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl https://download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
   - ps: get-command pip
   - ps: pip install Rtree-0.8.3-cp27-cp27m-win_amd64.whl 
@@ -22,7 +23,6 @@ init:
   - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
 
 install:
-    - ps: Remove-Item Alias:curl
     #- ps: Remove-Item Alias:wget
     #- ps: choco install wget
     #- ps: choco install curl
