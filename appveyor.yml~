@@ -7,30 +7,28 @@ environment:
     - PYTHON: "C:\\Python27_64"
       PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
-      
+      MINICONDA: "C:\\ProgramData\\Miniconda2"  
 
   TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-
+  - ps: choco install miniconda
+  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:PATH"
 install:
-  - ps: get-command python
-  - ps: Remove-Item Alias:wget
-    #- ps: Remove-Item Alias:curl
-  - ps: choco install wget
+    #- ps: Remove-Item Alias:wget
+    #- ps: choco install wget
+  - ps: conda install -y -c ioos netcdf4
 
-  - ps: mkdir downloads
-  - ps: cd downloads
-  - ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip -o out
-  - ps: 7z x *.zip -o*
-  - ps: ls
-  - ps: cd CMake-hdf5-1.10.1\CMake-hdf5-1.10.1
-  - ps: .\build-VS2013-64.bat
-  - ps: cd C:\projects\wat
-  - ps: ls C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1
-  - ps: pip install numpy==1.7.0
-  - ps: pip install HDF5_DIR=C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1  -r requirements.pip
+    # - ps: wget -nv -nc https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.1/src/CMake-hdf5-1.10.1.zip -o out
+    #  - ps: 7z x *.zip -o*
+    #  - ps: ls
+    #  - ps: cd CMake-hdf5-1.10.1\CMake-hdf5-1.10.1
+    #  - ps: .\build-VS2013-64.bat
+    #  - ps: cd C:\projects\wat
+    #  - ps: ls C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1
+    #- ps: pip install numpy==1.7.0
+    #- ps: pip install HDF5_DIR=C:/projects/wat/downloads/CMake-hdf5-1.10.1/CMake-hdf5-1.10.1\hdf5-1.10.1 -r requirements.pip
 
 test_script:
   - ps: cd ./tst
