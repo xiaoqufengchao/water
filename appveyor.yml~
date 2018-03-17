@@ -15,7 +15,7 @@ environment:
 init:
   - ps: Remove-Item Alias:curl
   - ps: curl -fsS -o Rtree-0.8.3-py2-none-any.whl https://pypi.python.org/packages/c9/d6/0d019787b724b15532be415e0c9782f7a869ebd5586f09535a67b2f12b9b/Rtree-0.8.3-py2-none-any.whl#md5=c990384aeeff68b3a599d78ac5207041
-  - ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl :d//download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
+    #- ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl :d//download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
   - ps: get-command pip
   - ps: pip install Rtree-0.8.3-cp27-cp27m-win_amd64.whl 
   - ps: get-command pip
