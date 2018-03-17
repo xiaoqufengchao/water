@@ -11,5 +11,5 @@ import math
 import csv
 
 
-sys.path.append(r'C:\ProgramData\Miniconda2\Lib\site-packages')
+sys.path.add(r'C:\ProgramData\Miniconda2\Lib\site-packages')
 print "nice!"

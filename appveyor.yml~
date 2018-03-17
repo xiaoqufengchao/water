@@ -15,6 +15,7 @@ environment:
 init:
   - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
   - ps: python addpath.py
+
 install:
   - ps: choco install miniconda
   - ps: ls C:\\ProgramData\\Miniconda2\Lib\site-packages
