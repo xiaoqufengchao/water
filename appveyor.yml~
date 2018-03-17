@@ -21,7 +21,6 @@ install:
 
   - ps: conda install -y -q -c ioos netcdf4
   - ps: conda install -y -q -c cjrh numpy
-
   - ps: conda install -y --no-update-deps -c erdc fiona
   - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
   - ps: Remove-Item Alias:curl
