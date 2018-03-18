@@ -1,3 +1,4 @@
+#!/bin/bash
 file=$1
 
 diff -w (md5sum $1) $1.md5
