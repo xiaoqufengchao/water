@@ -83,9 +83,10 @@ install:
 script:
 - cd $TRAVIS_BUILD_DIR
 - cd ./tst/
-- travis_wait 60 $TST_PUB_DWNL #&& travis_wait 40 $TST_PUB_DWNL
-- travis_wait 60 $TST_PUB_REPR #&& travis_wait 40 $TST_PUB_REPR
+- travis_wait 60 $TST_PUB_DWNL 
+- travis_wait 60 $TST_PUB_REPR
 - echo "The build is now completed"
+
 
 #*******************************************************************************
 #End
