@@ -19,13 +19,13 @@ install:
   - ps: choco install miniconda
   - ps: conda update -y six
   
-    #- ps: conda install -y -q -c ioos netcdf4
-    #- ps: conda install -y -q -c cjrh numpy
-    #- ps: conda install -y -q -c erdc fiona
+  - ps: conda install -y -q -c ioos netcdf4
+  - ps: conda install -y -q -c cjrh numpy
+  - ps: conda install -y -q -c erdc fiona
 
-    # - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
+  - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
   - ps: Remove-Item Alias:curl
-  - ps: conda install -y conda-forge rtree
+  - ps: conda install -y -c conda-forge rtree
     #- ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl https://download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
     #- ps: pip --disable-pip-version-check install Rtree-0.8.3-cp27-cp27m-win_amd64.whl
   
