@@ -22,6 +22,7 @@
 #Author:
 #Cedric H. David, 2018-2018
 
+python ../src/test.py
 
 #*******************************************************************************
 #Publication message
