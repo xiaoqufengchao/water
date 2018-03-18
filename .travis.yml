@@ -40,8 +40,8 @@ before_install:
 #-------------------------------------------------------------------------------
 #Specific to Linux
 #-------------------------------------------------------------------------------
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get --version             ; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y $(grep -v -E '(^#|^$)' requirements.apt) ; fi
+#- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get --version             ; fi
+#- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y $(grep -v -E '(^#|^$)' requirements.apt) ; fi
 
 - which wget
 - whereis wget
@@ -49,10 +49,10 @@ before_install:
 #-------------------------------------------------------------------------------
 #Specific to OSX
 #-------------------------------------------------------------------------------
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew reinstall $(grep -v -E '(^#|^$)' requirements.brw) ; fi
+#- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew reinstall $(grep -v -E '(^#|^$)' requirements.brw) ; fi
 
 #-------------------------------------------------------------------------------
 #General environment details
@@ -71,10 +71,10 @@ before_install:
 #*******************************************************************************
 install:
 - cd $TRAVIS_BUILD_DIR
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install $(grep numpy requirements.pip); fi
+  #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo -H pip install -r requirements.pip; fi
 
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19 pip install --ignore-installed -r requirements.pip; fi
+  #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo -H  HDF5_DIR=/usr/local/Cellar/hdf5@1.8/1.8.19 pip install --ignore-installed -r requirements.pip; fi
 
 
 #*******************************************************************************
