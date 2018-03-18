@@ -1,3 +1,0 @@
-import sys
-print(sys.path)
-sys.path.append(r'C:\ProgramData\Miniconda2\Lib\site-packages')
