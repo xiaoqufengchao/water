@@ -116,7 +116,6 @@ mkdir -p $folder
 for file in $list
 do
      wget -v $URL/$file -P $folder -o out
-     #curl -fsS -o $folder/$file $URL/$file
      if [ $? -gt 0 ] ; then echo "Problem downloading $file" >&2 ; exit 44 ; fi
 done
 
