@@ -50,8 +50,7 @@ echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
 
 main_directory=$(pwd)
-echo $main_directory
-./compare.sh hehe.nc
+
 #*******************************************************************************
 #Download current GRACE files
 #*******************************************************************************
@@ -123,9 +122,9 @@ done
 #-------------------------------------------------------------------------------
 #Check downloads
 #-------------------------------------------------------------------------------
+mv compare.sh $folder
 cd $folder
 if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-  pwd
   ./compare.sh GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc
 else
   md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
