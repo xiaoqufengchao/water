@@ -17,7 +17,7 @@ init:
 
 install:
   - ps: choco install miniconda
-  - ps: conda update six
+  - ps: conda update -y six
   
   - ps: conda install -y -q --no-update-deps -c erdc fiona
   - ps: conda install -y -q -c ioos netcdf4
