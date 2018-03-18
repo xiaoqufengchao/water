@@ -108,8 +108,8 @@ python ./tst_cmp_n3d.py                                                         
      > $cmp_file
 x=$? && if [ $x -gt 0 ] ; then echo "Failed comparison: $cmp_file" >&2 ; exit $x ; fi
 
-#rm -f $run_file
-#rm -f $cmp_file
+rm -f $run_file
+rm -f $cmp_file
 echo "Success"
 echo "********************"
 fi
