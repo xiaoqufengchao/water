@@ -16,7 +16,7 @@
 #*******************************************************************************
 #Import Python modules
 #*******************************************************************************
-
+import os
 import sys
 import os.path
 import subprocess
@@ -375,7 +375,6 @@ print('- Populate global attributes')
 dt=datetime.datetime.utcnow()
 dt=dt.replace(microsecond=0)
 #Current UTC time without the microseconds 
-import os
 version_script_path = os.getcwd() + "/version.sh"
 vsn=subprocess.Popen(version_script_path, stdout=subprocess.PIPE, shell=True).communicate()
 vsn=vsn[0]
