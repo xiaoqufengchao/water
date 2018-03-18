@@ -124,6 +124,7 @@ done
 #-------------------------------------------------------------------------------
 cd $folder
 if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+  pwd
   ./compare.sh GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc
 else
   md5sum -c GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc.md5
