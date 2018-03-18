@@ -27,9 +27,10 @@ install:
   - ps: Remove-Item Alias:curl
   - ps: curl -fsS -o Rtree-0.8.3-py2-none-any.whl https://pypi.python.org/packages/c9/d6/0d019787b724b15532be415e0c9782f7a869ebd5586f09535a67b2f12b9b/Rtree-0.8.3-py2-none-any.whl#md5=c990384aeeff68b3a599d78ac5207041
   - ps: pip --disable-pip-version-check install Rtree-0.8.3-py2-none-any.whl
+  - ps: conda install -c conda-forge six
+  
   - ps: Remove-Item Alias:wget
   - ps: choco install wget
-
 test_script:
   - ps: cd ./tst
   - ps: ls C:\\ProgramData\\Miniconda2\lib\site-packages  
