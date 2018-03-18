@@ -13,8 +13,6 @@
 #GRACE scale factors, these points are ignored in the averaging.
 #Author:
 #Cedric H. David, 2017-2017
-import os
-print(os.getcwd() + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 #*******************************************************************************
 #Import Python modules
 #*******************************************************************************

@@ -1,1 +1,3 @@
-python ../src/shbaam_twsa.py
+python ../test.py
+
+./compare.sh

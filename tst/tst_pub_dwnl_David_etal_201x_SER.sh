@@ -50,7 +50,7 @@ echo "Please cite these four DOIs if using these files for your publications."
 echo "********************"
 
 main_directory=$(pwd)
-
+echo $main_directory
 #*******************************************************************************
 #Download current GRACE files
 #*******************************************************************************
