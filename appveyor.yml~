@@ -19,7 +19,7 @@ install:
   - ps: choco install miniconda
   - ps: conda update -y six
   
-  - ps: conda install -y -q --no-update-deps -c erdc fiona
+  - ps: conda install -y -q -c erdc fiona
     # - ps: conda install -y -q --no-update-deps -c erdc fiona
   - ps: conda install -y -q -c ioos netcdf4
   - ps: conda install -y -q -c cjrh numpy
