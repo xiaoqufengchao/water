@@ -13,7 +13,7 @@ environment:
   TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
 
 init:
-  - ps: $ENV:PATH="$ENV:MINICONDA\\Scripts;$ENV:PATH"
+  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
 
 install:
   - ps: choco install miniconda
