@@ -57,14 +57,14 @@ before_install:
 #-------------------------------------------------------------------------------
 #General environment details
 #-------------------------------------------------------------------------------
-- uname -a
-- echo $TRAVIS_OS_NAME
-- gcc --version
-- python --version
-- pip --version
-- which wget
-- whereis wget
-- wget --version
+#- uname -a
+#- echo $TRAVIS_OS_NAME
+#- gcc --version
+#- python --version
+#- pip --version
+#- which wget
+#- whereis wget
+#- wget --version
 
 #*******************************************************************************
 #Installing SHBAAM
