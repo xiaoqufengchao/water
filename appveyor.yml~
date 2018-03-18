@@ -19,10 +19,12 @@ install:
   - ps: choco install miniconda
   - ps: conda update -y six
   
-  - ps: conda install -y -q -c erdc fiona
-    # - ps: conda install -y -q --no-update-deps -c erdc fiona
   - ps: conda install -y -q -c ioos netcdf4
   - ps: conda install -y -q -c cjrh numpy
+  - ps: conda install -y -q -c erdc fiona
+    # - ps: conda install -y -q --no-update-deps -c erdc fiona
+ 
+  - ps: conda update -y six
 
     #  - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
     #- ps: Remove-Item Alias:curl
