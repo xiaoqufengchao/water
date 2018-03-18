@@ -31,7 +31,6 @@ install:
 
 test_script:
   - ps: cd ./tst
-  - ps: python test.py
   - ps: sh tst_pub_dwnl_David_etal_201x_SER.sh
   - ps: sh tst_pub_repr_David_etal_201x_SER.sh
 

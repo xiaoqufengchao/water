@@ -81,7 +81,7 @@ run_file=tmp_run_$unt.txt
 cmp_file=tmp_cmp_$unt.txt
 
 echo "- Terrestrial water storage anomalies"
-python ../src/shbaam_twsa.py                                                          \
+python ../src/shbaam_twsa.py                                                   \
      ../input/GRACE/GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc   \
      ../input/GRACE/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc                     \
      ../input/SERVIR_STK/Nepal.shp                                             \
@@ -91,7 +91,7 @@ python ../src/shbaam_twsa.py                                                    
 x=$? && if [ $x -gt 0 ] ; then echo "Failed run: $run_file" >&2 ; exit $? ; fi
 
 echo "- Comparing timeseries"
-./tst_cmp_csv.py                                                               \
+python ./tst_cmp_csv.py                                                               \
      ../output/SERVIR_STK/timeseries_Nepal.csv                                 \
      ../output/SERVIR_STK/timeseries_Nepal_tst.csv                             \
      1e-6                                                                      \
@@ -100,7 +100,7 @@ echo "- Comparing timeseries"
 x=$? && if [ $x -gt 0 ] ; then echo "Failed comparison: $cmp_file" >&2 ; exit $x ; fi
 
 echo "- Comparing maps"
-./tst_cmp_n3d.py                                                               \
+python ./tst_cmp_n3d.py                                                               \
      ../output/SERVIR_STK/map_Nepal.nc                                         \
      ../output/SERVIR_STK/map_Nepal_tst.nc                                     \
      1e-6                                                                      \

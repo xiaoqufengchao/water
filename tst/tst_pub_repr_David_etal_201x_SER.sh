@@ -81,7 +81,7 @@ run_file=tmp_run_$unt.txt
 cmp_file=tmp_cmp_$unt.txt
 
 echo "- Terrestrial water storage anomalies"
-python ../src/shbaam_twsa.py                                                          \
+python ../src/shbaam_twsa.py                                                   \
      ../input/GRACE/GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc   \
      ../input/GRACE/CLM4.SCALE_FACTOR.JPL.MSCNv01CRIv01.nc                     \
      ../input/SERVIR_STK/Nepal.shp                                             \
@@ -108,8 +108,8 @@ python ./tst_cmp_n3d.py                                                         
      > $cmp_file
 x=$? && if [ $x -gt 0 ] ; then echo "Failed comparison: $cmp_file" >&2 ; exit $x ; fi
 
-rm -f $run_file
-rm -f $cmp_file
+#rm -f $run_file
+#rm -f $cmp_file
 echo "Success"
 echo "********************"
 fi
