@@ -1,0 +1,37 @@
+version: 1.0.{build}
+
+build: false
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27-64"
+      PYTHON_VERSION: "2.7.14"
+      PYTHON_ARCH: "64"
+      MINICONDA: "C:\\ProgramData\\Miniconda2"  
+
+  TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
+  TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
+
+init:
+  - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
+
+install:
+  - ps: choco install miniconda
+  - ps: conda update -y six
+  
+  - ps: conda install -y -q -c ioos netcdf4
+  - ps: conda install -y -q -c cjrh numpy
+  - ps: conda install -y -q -c conda-forge rtree
+  - ps: conda install -y -q -c erdc fiona
+
+  - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
+  
+  - ps: Remove-Item Alias:wget
+  - ps: choco install wget
+
+test_script:
+  - ps: cd ./tst
+  - ps: sh tst_pub_dwnl_David_etal_201x_SER.sh
+  - ps: sh tst_pub_repr_David_etal_201x_SER.sh
+
+
