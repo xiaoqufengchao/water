@@ -25,17 +25,15 @@ install:
 
     # - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
   - ps: Remove-Item Alias:curl
-  - ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl https://download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
-  - ps: pip --disable-pip-version-check install Rtree-0.8.3-cp27-cp27m-win_amd64.whl
+  - ps: conda install -y conda-forge rtree
+    #- ps: curl -fsS -o Rtree-0.8.3-cp27-cp27m-win_amd64.whl https://download.lfd.uci.edu/pythonlibs/u2yrk7ps/Rtree-0.8.3-cp27-cp27m-win_amd64.whl
+    #- ps: pip --disable-pip-version-check install Rtree-0.8.3-cp27-cp27m-win_amd64.whl
   
-  - ps: ls C:\\ProgramData\\Miniconda2\lib\site-packages
-
-  - ps: Remove-Item Alias:wget
-  - ps: choco install wget
+    # - ps: Remove-Item Alias:wget
+    #- ps: choco install wget
 
 test_script:
   - ps: cd ./tst
-  - ps: ls C:\\ProgramData\\Miniconda2\lib\site-packages  
   - ps: python test.py
   - ps: sh tst_pub_dwnl_David_etal_201x_SER.sh
   - ps: sh tst_pub_repr_David_etal_201x_SER.sh
