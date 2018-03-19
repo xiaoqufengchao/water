@@ -43,9 +43,6 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get --version             ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y $(grep -v -E '(^#|^$)' requirements.apt) ; fi
 
-- which wget
-- whereis wget
-
 #-------------------------------------------------------------------------------
 #Specific to OSX
 #-------------------------------------------------------------------------------
@@ -84,7 +81,7 @@ script:
 - cd $TRAVIS_BUILD_DIR
 - cd ./tst/
 - travis_wait 60 $TST_PUB_DWNL 
-- travis_wait 60 $TST_PUB_REPR
+- $TST_PUB_REPR
 - echo "The build is now completed"
 
 
