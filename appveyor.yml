@@ -16,7 +16,11 @@ init:
   - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
 
 install:
-  - ps: choco install miniconda
+  - ps: Remove-Item Alias:wget
+  - ps: choco install (get-content requirements.win)
+    #- ps: choco install miniconda
+    #- ps: choco install wget
+
   - ps: conda update -y six
   
   - ps: conda install -y -q -c ioos netcdf4
@@ -25,9 +29,6 @@ install:
   - ps: conda install -y -q -c erdc fiona
 
   - ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
-  
-  - ps: Remove-Item Alias:wget
-  - ps: choco install wget
 
 test_script:
   - ps: cd ./tst
