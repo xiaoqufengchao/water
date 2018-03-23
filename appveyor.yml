@@ -24,7 +24,7 @@ install:
   - ps: pip --disable-pip-version-check install numpy
   - ps: pip --disable-pip-version-check install netcdf4
   - ps: pip --disable-pip-version-check install rtree
-  - ps: pip --disable-pip-version-check install libgdal-dev
+  - ps: pip --disable-pip-version-check install --no-download GDAL
   - ps: pip --disable-pip-version-check install fiona
   - ps: pip --disable-pip-version-check install shapely
     #- ps: conda install -y -q numpy
