@@ -21,17 +21,11 @@ install:
 
   - ps: conda update -y six
   
-  - ps: pip --disable-pip-version-check install numpy
-  - ps: pip --disable-pip-version-check install netcdf4
-  - ps: pip --disable-pip-version-check install rtree
-  - ps: pip --disable-pip-version-check install --no-download GDAL
-  - ps: pip --disable-pip-version-check install fiona
-  - ps: pip --disable-pip-version-check install shapely
-    #- ps: conda install -y -q numpy
-    # - ps: conda install -y -q netcdf4
-    #- ps: conda install -y -q rtree
-    #- ps: conda install -y -q fiona
-    #- ps: conda install -y -q shapely
+  - ps: conda install -y -q numpy
+  - ps: conda install -y -q netcdf4
+  - ps: conda install -y -q rtree
+  - ps: conda install -y -q fiona
+  - ps: conda install -y -q shapely
     
     #- ps: conda install -y -q -c ioos netcdf4
     #- ps: conda install -y -q -c cjrh numpy
