@@ -46,7 +46,6 @@ before_install:
 #-------------------------------------------------------------------------------
 #Specific to OSX
 #-------------------------------------------------------------------------------
-- pip2 --version
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
