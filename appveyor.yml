@@ -9,8 +9,8 @@ environment:
       PYTHON_ARCH: "64"
       MINICONDA: "C:\\ProgramData\\Miniconda2"  
 
-  TST_PUB_DWNL: './tst_pub_dwnl_David_etal_201x_SER.sh'
-  TST_PUB_REPR: './tst_pub_repr_David_etal_201x_SER.sh'
+  TST_PUB_DWNL: "./tst_pub_dwnl_David_etal_201x_SER.sh"
+  TST_PUB_REPR: "./tst_pub_repr_David_etal_201x_SER.sh"
 
 init:
   - ps: $ENV:PATH="$ENV:MINICONDA;$ENV:MINICONDA\\Scripts;$ENV:PATH"
@@ -21,12 +21,17 @@ install:
 
   - ps: conda update -y six
   
-  
-  - ps: conda install -y -q numpy
-  - ps: conda install -y -q netcdf4
-  - ps: conda install -y -q rtree
-  - ps: conda install -y -q fiona
-  - ps: conda install -y -q shapely
+  - ps: pip --disable-pip-version-check install numpy
+  - ps: pip --disable-pip-version-check install netcdf4
+  - ps: pip --disable-pip-version-check install rtree
+  - ps: pip --disable-pip-version-check install fiona
+  - ps: pip --disable-pip-version-check install shapely
+    #- ps: conda install -y -q numpy
+    # - ps: conda install -y -q netcdf4
+    #- ps: conda install -y -q rtree
+    #- ps: conda install -y -q fiona
+    #- ps: conda install -y -q shapely
+    
     #- ps: conda install -y -q -c ioos netcdf4
     #- ps: conda install -y -q -c cjrh numpy
     #- ps: conda install -y -q -c conda-forge rtree
