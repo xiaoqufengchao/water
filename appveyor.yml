@@ -26,12 +26,6 @@ install:
   - ps: conda install -y -q rtree
   - ps: conda install -y -q fiona
   - ps: conda install -y -q shapely
-    
-    #- ps: conda install -y -q -c ioos netcdf4
-    #- ps: conda install -y -q -c cjrh numpy
-    #- ps: conda install -y -q -c conda-forge rtree
-    #- ps: conda install -y -q -c erdc fiona
-    #- ps: pip --disable-pip-version-check install -i https://pypi.anaconda.org/joschka_zj/simple shapely
 
 test_script:
   - ps: cd ./tst
