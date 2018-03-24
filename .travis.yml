@@ -40,6 +40,10 @@ before_install:
 #-------------------------------------------------------------------------------
 #Specific to Linux
 #-------------------------------------------------------------------------------
+
+- python --version
+- which python
+- whereis python
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then apt-get --version             ; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y $(grep -v -E '(^#|^$)' requirements.apt) ; fi
 
@@ -47,10 +51,10 @@ before_install:
 #Specific to OSX
 #-------------------------------------------------------------------------------
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew --version                  ; fi
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then rm '/usr/local/include/c++' ; fi
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew reinstall $(grep -v -E '(^#|^$)' requirements.brw) ; fi
-#- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/python/libexec/bin:$PATH" ; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/python/libexec/bin:$PATH" ; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo easy_install pip ; fi
 
 #-------------------------------------------------------------------------------
 #General environment details
@@ -59,6 +63,8 @@ before_install:
 - echo $TRAVIS_OS_NAME
 - gcc --version
 - python --version
+- which python
+- whereis python
 - pip --version
 - which wget
 - whereis wget
